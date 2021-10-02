@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+    
+    <!-- we can also write control-statments in ejs template as  -->
+
+    <!-- <% if(dayValue === "Saturday" || dayValue === "Sunday"){ %>
+        <h1 style="color: purple"><%= dayValue %> ToDo List!</h1>    
+   <% } else { %>
+        <h1 style="color: blue"><%= dayValue %> ToDo List!</h1>
+   <% } %> -->
+    
+   <h1><%= dayValue %></h1>
+   <ul>
+       <!-- it will loop thru every item that passes thru post req and make an array and render every single item -->
+       <% for(var i=0; i<newListItems.length; i++){ %>
+           <li><%= newListItems[i] %></li>
+      <% } %>
+   </ul>
+   <!-- adding item thru post req  -->
+   <form action="/" method="post">
+    <input type="text" name="newItem" value="" autofocus>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>
